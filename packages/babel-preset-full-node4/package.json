@@ -1,7 +1,7 @@
 {
   "name": "babel-preset-full-node4",
   "description": "babel preset including es2015+ and stage-0 for node 4",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {},
   "main": "dist/index.js",
   "files": [
