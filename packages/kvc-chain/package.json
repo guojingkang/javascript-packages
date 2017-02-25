@@ -1,0 +1,27 @@
+{
+  "name": "kvc-chain",
+  "description": "",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {},
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">= 4"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/tianjianchn/javascript-packages/tree/master/packages/kvc-chain",
+  "repository": "https://github.com/tianjianchn/javascript-packages/tree/master/packages/kvc-chain",
+  "bugs": "https://github.com/tianjianchn/javascript-packages/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Tian Jian",
+    "email": "tianjianchn@qq.com"
+  },
+  "keywords": [
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "kvc",
+  "description": "key-value cache for memory/file etc",
+  "version": "0.4.4",
+  "private": true,
+  "scripts": {},
+  "main": "index.js",
+  "files": [
+    "dist/",
+    "*.js"
+  ],
+  "engines": {
+    "node": ">= 4"
+  },
+  "dependencies": {
+    "base64-ext": "^0.1.0"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/tianjianchn/javascript-packages/tree/master/packages/kvc",
+  "repository": "https://github.com/tianjianchn/javascript-packages/tree/master/packages/kvc",
+  "bugs": "https://github.com/tianjianchn/javascript-packages/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Tian Jian",
+    "email": "tianjianchn@qq.com"
+  },
+  "keywords": [
+    "cache",
+    "key-value"
+  ]
+}
+

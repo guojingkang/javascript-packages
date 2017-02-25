@@ -1,0 +1,36 @@
+{
+  "name": "frm",
+  "description": "flat and relational model orm",
+  "version": "0.9.1",
+  "private": true,
+  "scripts": {},
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">= 4"
+  },
+  "dependencies": {
+    "cuid": "^1.3.8",
+    "debug": "^2.2.0",
+    "tree-sort": "^1.0.1",
+    "xss": "^0.2.10"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/tianjianchn/javascript-packages/tree/master/packages/frm",
+  "repository": "https://github.com/tianjianchn/javascript-packages/tree/master/packages/frm",
+  "bugs": "https://github.com/tianjianchn/javascript-packages/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Tian Jian",
+    "email": "tianjianchn@qq.com"
+  },
+  "keywords": [
+    "model",
+    "er",
+    "orm",
+    "database"
+  ]
+}
+

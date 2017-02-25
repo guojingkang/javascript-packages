@@ -1,0 +1,27 @@
+{
+  "name": "base64-ext",
+  "description": "base64 encode/decode and work with URL",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {},
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">= 4"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/tianjianchn/javascript-packages/tree/master/packages/base64-ext",
+  "repository": "https://github.com/tianjianchn/javascript-packages/tree/master/packages/base64-ext",
+  "bugs": "https://github.com/tianjianchn/javascript-packages/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Tian Jian",
+    "email": "tianjianchn@qq.com"
+  },
+  "keywords": [
+  ]
+}

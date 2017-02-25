@@ -1,0 +1,35 @@
+{
+  "name": "babel-preset-full-node4",
+  "description": "babel preset including es2015+ and stage-0 for node 4",
+  "version": "1.0.2",
+  "scripts": {},
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">= 4"
+  },
+  "dependencies": {
+    "babel-preset-es2015-node4": "^2.1.0",
+    "babel-preset-es2016": "^6.16.0",
+    "babel-preset-es2017": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/tianjianchn/javascript-packages/tree/master/packages/babel-preset-full-node4",
+  "repository": "https://github.com/tianjianchn/javascript-packages/tree/master/packages/babel-preset-full-node4",
+  "bugs": "https://github.com/tianjianchn/javascript-packages/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Tian Jian",
+    "email": "tianjianchn@qq.com"
+  },
+  "keywords": [
+    "babel",
+    "preset",
+    "node",
+    "node4",
+    "server"
+  ]
+}

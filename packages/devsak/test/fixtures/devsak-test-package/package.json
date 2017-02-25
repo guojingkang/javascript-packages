@@ -1,0 +1,9 @@
+{
+  "name": "devsak-test-package",
+  "version": "0.0.1",
+  "description": "devsak package used only for test case",
+  "author": {
+    "name": "kiliwalk",
+    "email": "kilireg@qq.com"
+  }
+}

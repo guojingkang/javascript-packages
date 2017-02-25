@@ -1,0 +1,17 @@
+{
+  "folders":
+  [
+    {
+      "file_exclude_patterns":
+      [
+        ".project", "npm-debug.log"
+      ],
+      "folder_exclude_patterns":
+      [
+        "node_modules", ".settings", "coverage", ".vscode"
+      ],
+      "follow_symlinks": true,
+      "path": "."
+    }
+  ]
+}
