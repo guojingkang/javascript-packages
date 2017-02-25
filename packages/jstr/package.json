@@ -1,0 +1,44 @@
+{
+  "name": "jstr",
+  "description": "simple template with dynamic include, error line no for node",
+  "version": "1.1.0",
+  "private": true,
+  "homepage": "https://github.com/kiliwalk/jstr",
+  "bugs": "https://github.com/kiliwalk/jstr/issues",
+  "license": "MIT",
+  "main": "index.js",
+  "preferGlobal": false,
+  "author": {
+    "name": "kiliwalk",
+    "email": "kiliwalk@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiliwalk/jstr"
+  },
+  "keywords": [
+    "ejs",
+    "template"
+  ],
+  "peerDependencies": {
+    "fibext": "^1.2.2",
+    "path-is-absolute": "^1.0.0",
+    "syntax-error": "^1.1.4"
+  },
+  "devDependencies": {
+  },
+  "files": [
+    "HISTORY.md",
+    "README.md",
+    "LICENSE",
+    "lib/",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "mocha -b --reporter spec",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec"
+  }
+}

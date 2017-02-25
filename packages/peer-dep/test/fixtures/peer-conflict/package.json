@@ -1,0 +1,12 @@
+{
+  "name": "peer-conflict",
+  "description": "peer module should not be introduced by dependencies",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "semver": "^4.1.0"
+  },
+  "optionalPeerDependencies": {
+    "semver": "^4.1.0"
+  }
+}

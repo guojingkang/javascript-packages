@@ -1,0 +1,14 @@
+<html style="color: white;" name="a'bds">
+  <body>
+    <@name@>
+    <ul><!--@for(var i in arr){
+      var item = arr[i];
+    -->
+      <li><@item@></li><!--@}-->
+    </ul>
+    <select><!--@for(var k in obj){-->
+      <option value="<@k@>"><@obj[k]@></option><!--@}-->
+    </select>
+    <!--@if(bool){--><span><@bool@></span><!--@}-->
+  </body>
+</html>

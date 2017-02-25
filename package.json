@@ -33,14 +33,16 @@
     "gulp-sourcemaps": "^2.4.1",
     "gulp-util": "^3.0.8",
     "istanbul": "^1.1.0-alpha.1",
+    "jsonfile": "^2.4.0",
     "lerna": "2.0.0-beta.36",
+    "lodash.isequal": "^4.4.0",
+    "lodash.uniq": "^4.5.0",
     "mocha": "^3.2.0",
     "react": "^15.4.2",
+    "request": "^2.65.0",
     "supertest": "^3.0.0",
     "through2": "^2.0.1",
-    "jsonfile": "^2.4.0",
-    "lodash.isequal": "^4.4.0",
-    "lodash.uniq": "^4.5.0"
+    "underscore": "^1.8.3"
   },
   "license": "MIT",
   "author": {

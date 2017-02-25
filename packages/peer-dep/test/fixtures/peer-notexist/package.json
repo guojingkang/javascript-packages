@@ -1,0 +1,11 @@
+{
+  "name": "peer-notexist",
+  "description": "peer module not exists",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "optionalPeerDependencies": {
+    "nonexistent-peer-module": "^1.0.0"
+  }
+}

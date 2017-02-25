@@ -3,3 +3,17 @@ packages/fs-readdirp
 packages/kvc
 packages/kvc-chain
 packages/restful-request
+packages/wx-abc
+packages/umc
+packages/umc-managed-store
+packages/peer-dep
+packages/nbs
+packages/jstr
+packages/json-i18n
+packages/js-conf
+packages/hier-i18n
+packages/hier-cache
+packages/hier-cache-file-store
+packages/fibext
+packages/ctx-logger
+packages/ctx-logger-file-store

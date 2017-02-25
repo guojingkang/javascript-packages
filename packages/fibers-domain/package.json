@@ -1,0 +1,39 @@
+{
+  "name": "fibers-domain",
+  "description": "run in sequence, avoid callback-hell",
+  "version": "1.0.2",
+  "private": true,
+  "homepage": "https://github.com/kiliwalk/fibers-domain",
+  "bugs": "https://github.com/kiliwalk/fibers-domain/issues",
+  "license": "MIT",
+  "main": "index.js",
+  "preferGlobal": false,
+  "author": {
+    "name": "kiliwalk",
+    "email": "kiliwalk@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiliwalk/fibers-domain"
+  },
+  "keywords": [
+    "sync",
+    "async",
+    "callback",
+    "sequence",
+    "domain",
+    "fibers"
+  ],
+  "peerDependencies": {
+    "fibers": "^1.0.6"
+  },
+  "devDependencies": {},
+  "subdomain": "kiliwalk.org",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "scripts": {
+    "test": "mocha -b --reporter spec",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec"
+  }
+}

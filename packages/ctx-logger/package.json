@@ -1,0 +1,44 @@
+{
+  "name": "ctx-logger",
+  "description": "logger with multiple stores and auto context support",
+  "version": "2.0.1",
+  "private": true,
+  "homepage": "https://github.com/kiliwalk/ctx-logger",
+  "bugs": "https://github.com/kiliwalk/ctx-logger/issues",
+  "license": "MIT",
+  "main": "index.js",
+  "preferGlobal": false,
+  "author": {
+    "name": "kiliwalk",
+    "email": "kiliwalk@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiliwalk/ctx-logger"
+  },
+  "keywords": [
+    "logger",
+    "context",
+    "context-logger",
+    "auto context",
+    "request context",
+    "mutiple stores",
+    "console logger",
+    "file logger",
+    "profile",
+    "profiling",
+    "flush on exit"
+  ],
+  "dependencies": {
+    "colors": "^1.1.2"
+  },
+  "devDependencies": {
+    "sandboxed-module": "^2.0.3"
+  },
+  "subdomain": "kiliwalk.org",
+  "engines": {},
+  "scripts": {
+    "test": "mocha -b --reporter spec",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec"
+  }
+}

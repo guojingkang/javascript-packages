@@ -1,0 +1,43 @@
+{
+  "name": "umc-managed-store",
+  "description": "Support data normalization in state management",
+  "version": "0.3.3",
+  "private": true,
+  "homepage": "https://github.com/kiliwalk/umc-managed-store",
+  "bugs": "https://github.com/kiliwalk/umc-managed-store/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiliwalk/umc-managed-store"
+  },
+  "main": "lib/index.js",
+  "author": {
+    "name": "kiliwalk",
+    "email": "kiliwalk@qq.com"
+  },
+  "license": "MIT",
+  "scripts": {
+  },
+  "keywords": [
+    "umc",
+    "flux",
+    "store",
+    "clear",
+    "ensure",
+    "reference",
+    "entity"
+  ],
+  "engines": {
+    "node": ">= 4",
+    "npm": ">= 3"
+  },
+  "dependencies": {
+    "bytes": "^2.3.0",
+    "umc": ">=0.4.2"
+  },
+  "devDependencies": {
+    "devsak": "^0.4.16",
+    "eslint-config-easy": "^0.4.0",
+    "extend": "^3.0.0",
+    "kvc": "^0.4.1"
+  }
+}

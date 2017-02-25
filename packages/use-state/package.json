@@ -1,0 +1,51 @@
+{
+  "name": "use-state",
+  "description": "State management with models, immutable data and promise-based middlewares",
+  "version": "0.0.3",
+  "private": true,
+  "scripts": {
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">= 4"
+  },
+  "dependencies": {
+    "lodash.isplainobject": "^4.0.6",
+    "use-compose": "^0.4.0"
+  },
+  "peerDependencies": {
+    "react": "^15.4.0"
+  },
+  "devDependencies": {
+  },
+  "homepage": "https://github.com/kiliwalk/use-state",
+  "bugs": "https://github.com/kiliwalk/use-state/issues",
+  "license": "MIT",
+  "author": {
+    "name": "kiliwalk",
+    "email": "kiliwalk@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiliwalk/use-state"
+  },
+  "keywords": [
+    "flux",
+    "*ux",
+    "state",
+    "model",
+    "orm",
+    "normalize",
+    "immutable",
+    "global",
+    "middleware",
+    "use",
+    "promise",
+    "async",
+    "await",
+    "react"
+  ]
+}

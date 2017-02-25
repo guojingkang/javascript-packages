@@ -1,0 +1,1 @@
+Add your own `apiclient_cert.p12` and `params.json` files in this folder to run the test

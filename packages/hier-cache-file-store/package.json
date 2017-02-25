@@ -1,0 +1,36 @@
+{
+  "name": "hier-cache-file-store",
+  "description": "cache file store for hier-cache",
+  "version": "1.0.2",
+  "private": true,
+  "homepage": "https://github.com/kiliwalk/hier-cache-file-store",
+  "bugs": "https://github.com/kiliwalk/hier-cache-file-store/issues",
+  "license": "MIT",
+  "main": "index.js",
+  "preferGlobal": false,
+  "author": {
+    "name": "kiliwalk",
+    "email": "kiliwalk@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiliwalk/hier-cache-file-store"
+  },
+  "keywords": [
+    "cache",
+    "file cache",
+    "file kv-store"
+  ],
+  "dependencies": {
+    "fs-extra": "^0.24.0",
+    "fs-readdirp": "^1.0.0"
+  },
+  "devDependencies": {
+  },
+  "subdomain": "kiliwalk.org",
+  "engines": {},
+  "scripts": {
+    "test": "mocha -b --reporter spec",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec"
+  }
+}

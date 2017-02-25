@@ -1,0 +1,38 @@
+{
+  "name": "hier-cache",
+  "description": "cache with hierachical stores and keys support",
+  "version": "3.0.0",
+  "private": true,
+  "homepage": "https://github.com/kiliwalk/hier-cache",
+  "bugs": "https://github.com/kiliwalk/hier-cache/issues",
+  "license": "MIT",
+  "main": "index.js",
+  "preferGlobal": false,
+  "author": {
+    "name": "kiliwalk",
+    "email": "kiliwalk@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiliwalk/hier-cache"
+  },
+  "keywords": [
+    "cache",
+    "hierachical cache",
+    "hierachical key",
+    "tiered cache",
+    "key-value",
+    "kv"
+  ],
+  "peerDependencies": {
+    "fibext": "^1.1.5"
+  },
+  "devDependencies": {
+  },
+  "subdomain": "kiliwalk.org",
+  "engines": {},
+  "scripts": {
+    "test": "mocha -b --reporter spec",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec"
+  }
+}

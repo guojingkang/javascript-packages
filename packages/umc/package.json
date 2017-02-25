@@ -1,0 +1,42 @@
+{
+  "name": "umc",
+  "description": "Another flux implementation that supports async and middlewares",
+  "version": "0.5.7",
+  "private": true,
+  "homepage": "https://github.com/kiliwalk/umc",
+  "bugs": "https://github.com/kiliwalk/umc/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiliwalk/umc"
+  },
+  "main": "lib/index.js",
+  "author": {
+    "name": "kiliwalk",
+    "email": "kiliwalk@qq.com"
+  },
+  "license": "MIT",
+  "scripts": {
+  },
+  "keywords": [
+    "use",
+    "flux",
+    "promise",
+    "middleware",
+    "client",
+    "express",
+    "koa",
+    "store",
+    "state",
+    "redux",
+    "url"
+  ],
+  "engines": {
+    "node": ">= 4",
+    "npm": ">= 3"
+  },
+  "dependencies": {
+    "use-compose": "^0.2.0"
+  },
+  "devDependencies": {
+  }
+}

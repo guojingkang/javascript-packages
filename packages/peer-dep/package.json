@@ -1,0 +1,46 @@
+{
+  "name": "peer-dep",
+  "description": "runtime peer dependency check",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://github.com/kiliwalk/peer-dep",
+  "bugs": "https://github.com/kiliwalk/peer-dep/issues",
+  "license": "MIT",
+  "main": "index.js",
+  "preferGlobal": false,
+  "author": {
+    "name": "kiliwalk",
+    "email": "kiliwalk@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiliwalk/peer-dep"
+  },
+  "keywords": [
+    "dependency",
+    "dependencies",
+    "peer",
+    "simver",
+    "optional",
+    "runtime"
+  ],
+  "dependencies": {
+    "semver": "^5.1.0"
+  },
+  "devDependencies": {
+  },
+  "files": [
+    "HISTORY.md",
+    "README.md",
+    "LICENSE",
+    "lib/",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "mocha -b --reporter spec",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "peer-strict",
+  "description": "peer module version not match",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "optionalPeerDependencies": {
+    "semver": "^4.1.0"
+  }
+}

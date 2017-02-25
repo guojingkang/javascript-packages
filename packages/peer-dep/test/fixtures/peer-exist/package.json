@@ -1,0 +1,11 @@
+{
+  "name": "peer-exist",
+  "description": "peer module exists",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "optionalPeerDependencies": {
+    "semver": "^5.1.0"
+  }
+}

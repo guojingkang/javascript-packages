@@ -1,0 +1,60 @@
+{
+  "name": "wx-abc",
+  "description": "weixin server-side package for simple usage",
+  "version": "1.0.8",
+  "private": true,
+  "homepage": "https://github.com/kiliwalk/wx-abc",
+  "bugs": "https://github.com/kiliwalk/wx-abc/issues",
+  "license": "MIT",
+  "main": "index.js",
+  "preferGlobal": false,
+  "author": {
+    "name": "kiliwalk",
+    "email": "kiliwalk@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiliwalk/wx-abc"
+  },
+  "keywords": [
+    "微信",
+    "weixin",
+    "wx",
+    "wechat",
+    "pay",
+    "redpacket",
+    "jssdk",
+    "menu",
+    "qrcode",
+    "template",
+    "cs",
+    "oauth",
+    "message",
+    "middlewares"
+  ],
+  "peerDependencies": {
+    "ms": "^0.7.1",
+    "peer-dep": "^1.0.0",
+    "request": "^2.65.0",
+    "xml2js": "^0.4.15"
+  },
+  "devDependencies": {
+  },
+  "optionalPeerDependencies": {
+    "fibext": "^1.2.2"
+  },
+  "files": [
+    "HISTORY.md",
+    "README.md",
+    "LICENSE",
+    "lib/",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "mocha -b --reporter spec",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec"
+  }
+}
