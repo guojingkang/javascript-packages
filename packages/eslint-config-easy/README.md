@@ -30,4 +30,4 @@ In your project root dir, create a file `.eslintrc` with content:
 ## License
 Licensed under MIT
 
-Copyright (c) 2016 [kiliwalk](https://github.com/kiliwalk)
+Copyright (c) 2017 [Tian Jian](https://github.com/tianjianchn)

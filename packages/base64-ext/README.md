@@ -5,4 +5,4 @@ sample project for node es7
 
 Licensed under MIT
 
-Copyright (c) 2016 [kiliwalk](https://github.com/kiliwalk)
+Copyright (c) 2017 [Tian Jian](https://github.com/tianjianchn)

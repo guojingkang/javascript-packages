@@ -39,4 +39,4 @@ require('babel-core').transform('code', {
 
 Licensed under MIT
 
-Copyright (c) 2016 [kiliwalk](https://github.com/kiliwalk)
+Copyright (c) 2017 [Tian Jian](https://github.com/tianjianchn)
