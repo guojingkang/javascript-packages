@@ -1,4 +1,4 @@
-airbnb(loose some syntax rules)+babel-eslint+promise
+airbnb + babel + promise + import + react
 =================================
 
 [eslint-config-easy](https://github.com/kiliwalk/eslint-config-easy) is based on [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) as airbnb is the most popular one.  
