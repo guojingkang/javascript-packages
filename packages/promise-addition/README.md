@@ -3,28 +3,40 @@ Extend native Promise in es6 with additional methods
 
 ### Example
 ```js
-import 'promise-addition';
+// inject methods to native Promise
+import 'promise-addition'; 
 
+// promisify the function
 const fs = Promise.promisify(require('fs'));
-fs.readFile(__filename, 'utf8').then(content => console.log(content));
+fs.readFile(__filename, 'utf8')
+  .then(content => console.log(content));
 
+// run function with callback injected
 Promise.fromCallback(function (callback) {
   callback(null, result); // or callback(err);
 }).then((result) => {});
 
-Promise.sleep(10).then(() => console.log('10ms past'));
+// wait 10ms
+Promise.sleep(10)
+  .then(() => console.log('10ms past'));
 
-Promise.each([1, 2, 3], (val, index) => val + 1).then(result => console.log(result));// [2, 3, 4]
+// run each item one by one
+Promise.each([1, 2, 3], (val, index) => val + 1)
+  .then(result => console.log(result));// [2, 3, 4]
 
 // run 3 promises concurrently all the time
-Promise.throttle([1, 2, 3, 4], 3, (val, index) => val + 1).then(result => console.log(result));// [2, 3, 4, 5]
+Promise.throttle([1, 2, 3, 4], 3, (val, index) => val + 1)
+  .then(result => console.log(result));// [2, 3, 4, 5]
 
-db.query().timeout(10000); // if query not completed in 10 seconds, reject as timeout
+// if query not completed in 10 seconds, reject as timeout
+db.query().timeout(10000); 
 
-db.query().delay(10000); // if query completed less than 10 seconds, wait then go next
+// if query completed less than 10 seconds, wait then go next
+db.query().delay(10000);
 
+// use finally() to release resources
 db.query()
-  .finally(() => db.disconnect()) // use finally() to release resources
+  .finally(() => db.disconnect())
   .then(users => console.log(users))
   .catch(err => console.log(`query error: ${err.message}`));
 
