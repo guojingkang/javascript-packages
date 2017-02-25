@@ -1,6 +1,8 @@
 Commands for [devsak-cli](https://github.com/kiliwalk/devsak-cli)
 =================================
 
+**DEPRECATED**
+
 ## 如果从devsak依赖转为自主控制:
 * 假设目标目录为dist, 源目录为src
 * 修改package.json

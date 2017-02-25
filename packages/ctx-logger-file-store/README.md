@@ -1,6 +1,8 @@
 file store for [ctx-logger](https://github.com/kiliwalk/ctx-logger)
 =================================
 
+**DEPRECATED**
+
 ### Extra options
 
 * `dir`: the directory used to save the keys and values. default `./logs`

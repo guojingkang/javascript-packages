@@ -1,6 +1,8 @@
 peer dependency check
 =================================
 
+**DEPRECATED**
+
 ### Installation
 
 ```

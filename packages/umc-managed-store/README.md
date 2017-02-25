@@ -1,6 +1,8 @@
 Support data normalization in state management
 =================================
 
+**DEPRECATED**
+
 ```js
 const ManagedStore = require('umc-managed-store');
 const Types = ManagedStore.Types;

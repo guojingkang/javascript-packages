@@ -1,6 +1,8 @@
 sample project for node es7
 =================================
 
+**DEPRECATED**
+
 ### License
 
 Licensed under MIT

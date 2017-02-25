@@ -1,5 +1,8 @@
 simple i18n with json/js-conf file
 =================================
+
+**DEPRECATED**
+
 see test cases for usage.
 
 ## License :

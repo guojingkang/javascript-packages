@@ -1,6 +1,8 @@
 DEPRECATED! fibers with resume/wait to achieve non-async async
 =================================
 
+**DEPRECATED**
+
 `a.js` file
 
 ```js

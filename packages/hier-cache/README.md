@@ -1,6 +1,8 @@
 cache with hierachical stores and keys
 =================================
 
+**DEPRECATED**
+
 ### Features
 
 * normal get/mget/set/del and batch operation

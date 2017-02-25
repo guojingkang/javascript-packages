@@ -1,6 +1,7 @@
 run in sequence, avoid callback-hell
 =================================
-Deprecated! use [fibext](https://www.npmjs.com/package/fibext) instead.
+
+**DEPRECATED**
 
 fibers-domain extends node-fibers and node domain, to achieve code run in sequence and sync
 

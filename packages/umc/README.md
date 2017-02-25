@@ -1,6 +1,8 @@
 Another flux implementation that supports async and middlewares
 =================================
 
+**DEPRECATED**
+
 Inspired by express and redux. Yes! You read that right: Express in client, haha:)  
 See [umc-managed-store](https://github.com/kiliwalk/umc-managed-store) for data normalization.
 

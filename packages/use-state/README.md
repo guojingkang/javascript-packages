@@ -1,6 +1,8 @@
 State management with models, immutable data and promise-based middlewares
 =================================
 
+**DEPRECATED**
+
 ## Current Progress
 * [x] Support express-like(use-like) and promise-based middlewares
 * [x] Support Map, like `{count: Number, login: {name: String}}`

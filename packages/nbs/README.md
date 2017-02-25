@@ -1,6 +1,8 @@
 DEPRECATED! non-blocking synchronization(nbs:) in nodejs
 =================================
 
+**DEPRECATED**
+
 
 I do not like Promise, yes I promise. This package is extended from [fibers](https://www.npmjs.com/package/fibers) and [domain](https://nodejs.org/docs/v0.10.40/api/domain.html), with much more friendly api(`run`/`wait`/`resume`), much more stronger error handling, much more tolerable for nested run, and aslo working in sync-callback.
 

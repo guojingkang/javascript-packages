@@ -1,5 +1,8 @@
 javascript style configuration file support
 =================================
+
+**DEPRECATED**
+
 you can write a conf file without json strict limit. you can add comments(`//`, `/**/`), enclose string in single-quote or without quote for key, call a function and so on.
 
 ### Usage

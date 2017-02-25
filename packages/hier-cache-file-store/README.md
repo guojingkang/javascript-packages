@@ -1,6 +1,8 @@
 cache file store for [hier-cache](https://github.com/kiliwalk/hier-cache)
 =================================
 
+**DEPRECATED**
+
 ### Extra options
 
 * `dir`: the directory used to save the keys and values

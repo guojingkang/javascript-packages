@@ -1,5 +1,8 @@
 weixin package for simple usage
 =================================
+
+**DEPRECATED**
+
 weixin server-side package for simple usage
 
 ### Installation

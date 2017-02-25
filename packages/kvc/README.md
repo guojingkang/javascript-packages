@@ -1,6 +1,8 @@
 key-value cache for memory/file etc
 =================================
 
+**DEPRECATED**
+
 ### License
 
 Licensed under MIT

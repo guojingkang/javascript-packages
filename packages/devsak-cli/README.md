@@ -1,6 +1,8 @@
 A Swiss Army Knife to init project/create files/lint/build/test/publish
 =================================
 
+**DEPRECATED**
+
 With devsak, there is no need to **manually** install a long list devDependencies in your package, 
 such as eslint and shared config, babel family, mocha family etc. 
 All you need is just install `devsak` and use it to:

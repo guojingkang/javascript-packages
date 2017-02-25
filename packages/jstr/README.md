@@ -1,5 +1,8 @@
 simple template for node
 =================================
+
+**DEPRECATED**
+
 Simple but more with dynamic include, syntax/runtime error caught with file path and line no, non-block file render(require `fibext`)
 
 ### Installation

@@ -1,6 +1,8 @@
 flat and relational model orm
 =================================
 
+**DEPRECATED**
+
 Inspired by siebel business component.
 
 ## Example

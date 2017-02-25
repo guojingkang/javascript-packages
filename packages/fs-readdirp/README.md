@@ -1,6 +1,8 @@
 simple readdirp with filter and sync/async version
 =================================
 
+**DEPRECATED**
+
 ### Features
 
 * just traverse the file path, not the content of file

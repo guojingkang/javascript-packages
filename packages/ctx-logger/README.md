@@ -1,6 +1,8 @@
 logger with multiple stores and auto context support
 =================================
 
+**DEPRECATED**
+
 ### Features
 
 * normal debug/info/warn/error operation

@@ -1,6 +1,8 @@
 two-types and chain errors for user and bug in node
 =================================
 
+**DEPRECATED**
+
 ```js
 var e2 = require('2e'), UserError = e2.UserError, BugError = e2.BugError;
 throw new UserError('xxx');
