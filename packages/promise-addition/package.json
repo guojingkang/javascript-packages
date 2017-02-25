@@ -1,0 +1,40 @@
+{
+  "name": "promise-addition",
+  "description": "Extend native Promise in es6 with additional methods",
+  "version": "0.1.0",
+  "scripts": {
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">= 4"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/tianjianchn/javascript-packages/tree/master/packages/promise-addition",
+  "repository": "https://github.com/tianjianchn/javascript-packages/tree/master/packages/promise-addition",
+  "bugs": "https://github.com/tianjianchn/javascript-packages/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Tian Jian",
+    "email": "tianjianchn@qq.com"
+  },
+  "keywords": [
+    "promise",
+    "native",
+    "es6",
+    "addition",
+    "extend",
+    "plus",
+    "tool",
+    "enhance",
+    "enhancement",
+    "helper",
+    "assistant",
+    "friend",
+    "next"
+  ]
+}
