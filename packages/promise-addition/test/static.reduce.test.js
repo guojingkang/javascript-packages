@@ -21,7 +21,7 @@ describe('promise-addition: Promise.reduce()', function () {
       assert.deepStrictEqual(result, 6);
     });
     it('should work with promise initialValue', async function () {
-      const result = await Promise.reduce([], (prev, val) => prev + val, Promise.sleep(10).then(() => 1));
+      const result = await Promise.reduce([], (prev, val) => prev + val, Promise.delay(10).then(() => 1));
       assert.deepStrictEqual(result, 1);
     });
   });
@@ -32,7 +32,7 @@ describe('promise-addition: Promise.reduce()', function () {
       assert.deepStrictEqual(result, [[1, 0], [2, 1], [3, 2]]);
     });
     it('should work with async iterator', async function () {
-      const result = await Promise.reduce([15, 5, 1], (prev, val) => Promise.sleep(val).then(() => prev + val), 0);
+      const result = await Promise.reduce([15, 5, 1], (prev, val) => Promise.delay(val).then(() => prev + val), 0);
       assert.deepStrictEqual(result, 21);
     });
   });
@@ -75,7 +75,7 @@ describe('promise-addition: Promise.reduce()', function () {
     it('should run all item promises one by one', async function () {
       const now = Date.now(),
         result = [];
-      await Promise.reduce([15, 7, 1], (prev, val) => Promise.sleep(val).then(() => result.push(val)));
+      await Promise.reduce([15, 7, 1], (prev, val) => Promise.delay(val).then(() => result.push(val)));
       assert(Date.now() - now >= 23);
       assert.deepStrictEqual(result, [15, 7, 1]);
     });

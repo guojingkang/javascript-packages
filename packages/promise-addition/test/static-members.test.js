@@ -4,10 +4,10 @@ const fs = require('fs');
 require('..');
 
 describe('promise-addition: static members', function () {
-  describe('.sleep()', function () {
+  describe('.delay()', function () {
     it('should work', async function () {
       const now = Date.now();
-      await Promise.sleep(30);
+      await Promise.delay(30);
       assert(Date.now() - now >= 30);
     });
   });

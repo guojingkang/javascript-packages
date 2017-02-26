@@ -21,7 +21,7 @@ Promise.prototype.timeout = function timeout(ms, message) {
 
 // How many milliseconds at least the promise would be treated as fulfilled
 Promise.prototype.delay = function delay(ms) {
-  return Promise.all([this, Promise.sleep(ms)])
+  return Promise.all([this, Promise.delay(ms)])
   .then(result => result[0]);
 };
 

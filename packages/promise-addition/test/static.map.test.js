@@ -24,14 +24,14 @@ describe('promise-addition: Promise.map()', function () {
       assert.deepStrictEqual(result, [[1, 0], [2, 1], [3, 2]]);
     });
     it('should work with async iterator', async function () {
-      const result = await Promise.each([15, 5, 1], val => Promise.sleep(val).then(() => val));
+      const result = await Promise.each([15, 5, 1], val => Promise.delay(val).then(() => val));
       assert.deepStrictEqual(result, [15, 5, 1]);
     });
   });
 
   describe('resolve', function () {
     it('should keep the output order same with input', async function () {
-      const result = await Promise.map([15, 5, 1], val => Promise.sleep(val).then(() => val));
+      const result = await Promise.map([15, 5, 1], val => Promise.delay(val).then(() => val));
       assert.deepStrictEqual(result, [15, 5, 1]);
     });
   });
@@ -51,7 +51,7 @@ describe('promise-addition: Promise.map()', function () {
         await Promise.map([1, 2, 3], (val, index) => (val === 1 ? Promise.reject(`error on ${val}`) : result.push(val)), { concurrency: 2 });
         throw new Error('cant reached here');
       } catch (e) {
-        await Promise.sleep(30);
+        await Promise.delay(30);
         assert.equal(e, 'error on 1');
       }
       assert.deepStrictEqual(result, [2]);
@@ -71,18 +71,18 @@ describe('promise-addition: Promise.map()', function () {
   describe('concurrency option', function () {
     it('should run all item promises concurrently', async function () {
       const now = Date.now();
-      await Promise.map([10, 10, 10], val => Promise.sleep(val));
+      await Promise.map([10, 10, 10], val => Promise.delay(val));
       assert(Date.now() - now < 20);
     });
-    it.only('should treat non-positive concurrency number as Infinity', async function () {
+    it('should treat non-positive concurrency number as Infinity', async function () {
       let now = Date.now();
-      await Promise.map([10, 10, 10], val => Promise.sleep(val), { concurrency: 0 });
+      await Promise.map([10, 10, 10], val => Promise.delay(val), { concurrency: 0 });
       assert(Date.now() - now < 20);
       now = Date.now();
-      await Promise.map([10, 10, 10], val => Promise.sleep(val), { concurrency: -1 });
+      await Promise.map([10, 10, 10], val => Promise.delay(val), { concurrency: -1 });
       assert(Date.now() - now < 20);
       now = Date.now();
-      await Promise.map([10, 10, 10], val => Promise.sleep(val), { concurrency: 1 });
+      await Promise.map([10, 10, 10], val => Promise.delay(val), { concurrency: 1 });
       assert(Date.now() - now >= 30);
     });
     it('should run next immediately after one fulfilled with throttled', async function () {
@@ -90,7 +90,7 @@ describe('promise-addition: Promise.map()', function () {
         order2 = [];
       await Promise.map([15, 5, 1], (val) => {
         order.push(val);
-        return Promise.sleep(val).then(() => {
+        return Promise.delay(val).then(() => {
           order2.push(val);
           return val;
         });

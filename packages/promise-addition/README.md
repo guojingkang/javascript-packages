@@ -17,7 +17,7 @@ Promise.fromCallback(function (callback) {
 }).then((result) => {});
 
 // wait 10ms
-Promise.sleep(10)
+Promise.delay(10)
   .then(() => console.log('10ms past'));
 
 // run each item promise one by one
@@ -47,7 +47,7 @@ db.query()
 ```
 
 ### API
-#### Promise.sleep(ms: int)
+#### Promise.delay(ms: int)
 Promise version of `setTimeout()`
 
 #### Promise.promisify(input: function, options?: {context?: object, multiArgs?: boolean})

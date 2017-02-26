@@ -25,14 +25,14 @@ describe('promise-addition: Promise.each()', function () {
       assert.deepStrictEqual(result, [[1, 0], [2, 1], [3, 2]]);
     });
     it('should work with async iterator', async function () {
-      const result = await Promise.each([15, 5, 1], val => Promise.sleep(val).then(() => val));
+      const result = await Promise.each([15, 5, 1], val => Promise.delay(val).then(() => val));
       assert.deepStrictEqual(result, [15, 5, 1]);
     });
   });
 
   describe('resolve', function () {
     it('should keep the output order same with input', async function () {
-      const result = await Promise.each([15, 5, 1], val => Promise.sleep(val).then(() => val));
+      const result = await Promise.each([15, 5, 1], val => Promise.delay(val).then(() => val));
       assert.deepStrictEqual(result, [15, 5, 1]);
     });
   });
@@ -72,7 +72,7 @@ describe('promise-addition: Promise.each()', function () {
     it('should run all item promises one by one', async function () {
       const now = Date.now(),
         result = [];
-      await Promise.each([15, 7, 1], val => Promise.sleep(val).then(() => result.push(val)));
+      await Promise.each([15, 7, 1], val => Promise.delay(val).then(() => result.push(val)));
       assert(Date.now() - now >= 23);
       assert.deepStrictEqual(result, [15, 7, 1]);
     });

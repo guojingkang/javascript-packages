@@ -36,7 +36,7 @@ describe('promise-addition: .timeout()', function () {
     const result = [];
 
     try {
-      await new Promise(resolve => Promise.sleep(15).then(() => {
+      await new Promise(resolve => Promise.delay(15).then(() => {
         result.push(1);
         return resolve();
       })).timeout(5);
@@ -45,15 +45,15 @@ describe('promise-addition: .timeout()', function () {
       assert(e.timeout);
       assert.equal(e.message, 'timeout');
     }
-    await Promise.sleep(11);
+    await Promise.delay(11);
     assert.deepStrictEqual(result, [1]);
   });
 });
 
 function getDelayPromise(ms) {
-  return new Promise(resolve => Promise.sleep(ms).then(() => resolve(1)));
+  return new Promise(resolve => Promise.delay(ms).then(() => resolve(1)));
 }
 
 function getRejectPromise(ms) {
-  return new Promise((resolve, reject) => Promise.sleep(ms).then(() => reject(new Error('rejected'))));
+  return new Promise((resolve, reject) => Promise.delay(ms).then(() => reject(new Error('rejected'))));
 }
