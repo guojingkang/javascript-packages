@@ -25,7 +25,7 @@ describe('promise-addition: static members', function () {
         },
       };
       const foo1 = Promise.promisify(obj.foo);
-      assert(await foo1() === undefined);
+      assert(await foo1() === undefined); // undefined in mocha
       assert(await foo1.call(obj) === obj);
 
       const foo2 = Promise.promisify(obj.foo, { context: obj });
@@ -43,6 +43,36 @@ describe('promise-addition: static members', function () {
 
       const foo2 = Promise.promisify(obj.foo, { multiArgs: true });
       assert.deepStrictEqual(await foo2(), [1, 2]);
+    });
+  });
+
+  describe('.promisifyAll()', function () {
+    it('should work with node modules', async function () {
+      const pfs = Promise.promisifyAll(fs);
+      const content = await pfs.readFileAsync(__filename, 'utf8');
+      assert(content.indexOf('should work with node modules') > 0);
+    });
+    it('should keep the context', async function () {
+      const obj = {
+        foo(cb) {
+          setTimeout(() => cb(null, this), 5);
+        },
+      };
+      const obj2 = Promise.promisifyAll(obj);
+      assert(obj2 === obj);
+      assert(await obj.fooAsync() === obj);
+      assert(await obj.fooAsync.call(this) === this);
+    });
+    it('should work with filter option', async function () {
+      const obj = {
+        bar() {},
+        foo(cb) {
+          setTimeout(() => cb(null, 1, 2), 5);
+        },
+      };
+      Promise.promisifyAll(obj, { filter: (value, key) => key === 'foo' });
+      assert(!!obj.fooAsync);
+      assert(!obj.barAsync);
     });
   });
 

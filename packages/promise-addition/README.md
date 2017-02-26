@@ -77,6 +77,11 @@ If the promise is fulfilled less than the specified time(ms), wait.
 #### promise.finally(callback: ()=>any)
 If the promise fulfilled, run the finally callback first, then run `.then()` or `.catch()`. If the callback returns a rejected promise or throws an error, it will trigger the global `unhandledRejection` event(`process.on('unhandledRejection', cb)`). Others return will be ignored.
 
+### Why not create a sub class for es6 native Promise?
+First, I think extending native Promise is easy to use and safe enough for me.
+Creating a sub class need to consider the static methods(like `resolve()`, `reject()`, `all()`), and there is a problem to do that. See: 
+* [Problem with extending Promise](https://github.com/babel/babel/issues/1120)
+* [Extending Promises in ES6](http://stackoverflow.com/questions/29333540/extending-promises-in-es6)
 
 ### License
 Licensed under MIT

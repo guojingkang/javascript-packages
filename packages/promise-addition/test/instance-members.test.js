@@ -31,6 +31,7 @@ describe('promise-addition: instance members', function () {
       }
     });
   });
+
   describe('.finally()', function () {
     it('should work', async function () {
       const result = [];
@@ -61,6 +62,20 @@ describe('promise-addition: instance members', function () {
 
       process.removeAllListeners('unhandledRejection');
       listeners.forEach(listener => process.on('unhandledRejection', listener));
+    });
+  });
+
+  describe('.asCallback()', function () {
+    it('should work with resolved', async function () {
+      const result = [];
+      Promise.delay(5).then(() => 1).asCallback((err, ret) => {
+        result.push([err, ret]);
+      });
+      Promise.delay(5).then(() => Promise.reject('rejected')).asCallback((err, ret) => {
+        result.push([err, ret]);
+      });
+      await Promise.delay(30);
+      assert.deepStrictEqual(result, [[null, 1], ['rejected', undefined]]);
     });
   });
 });
