@@ -1,35 +1,22 @@
 
-Promise.sleep = ms => new Promise(r => setTimeout(r, ms));
+Promise.sleep = ms =>
+  new Promise(resolve => setTimeout(resolve, ms));
 
-function promisifyFunc(funcWithCallback) {
-  return function (...args) { // eslint-disable-line func-names
+// Promise.promisify(fs.readFile);
+Promise.promisify = (funcWithCallback, { context, multiArgs = false } = {}) =>
+  function promisifyFunc(...args) { // eslint-disable-line func-names
     return new Promise((resolve, reject) => {
-      funcWithCallback(...args, (err, result) => {
+      funcWithCallback.call(context || this, ...args, (err, ...rets) => {
         if (err) return reject(err);
-        else return resolve(result);
+        else {
+          if (multiArgs) return resolve(rets);
+          return resolve(rets[0]);
+        }
       });
     });
   };
-}
 
-Promise.promisify = function promisify(input) {
-  if (typeof input === 'function') {
-    return promisifyFunc(input);
-  } else {
-    if (!input) return input;
-    const result = {};
-    for (const key in input) {
-      const val = input[key];
-      if (typeof val === 'function') {
-        result[key] = promisifyFunc(val);
-      } else {
-        result[key] = val;
-      }
-    }
-    return result;
-  }
-};
-
+// Promise.fromCallback((cb)=>cb(null, result));
 Promise.fromCallback = function fromCallback(func) {
   return new Promise((resolve, reject) => {
     func((err, result) => {
@@ -39,14 +26,11 @@ Promise.fromCallback = function fromCallback(func) {
   });
 };
 
-// Concurrenty run the promise with the capacity
-Promise.throttle = (input, size, callback) => {
-  if (typeof size === 'function') {
-    callback = size;
-    size = 1;
-  }
+// run the promises concurrently and return the result in a array with original order
+Promise.map = (input, iterator, { concurrency = Infinity } = {}) =>
+  Promise.resolve(input).then((arr) => {
+    if (concurrency === Infinity || !(concurrency > 0)) return Promise.all(arr.map(iterator));
 
-  return Promise.resolve(input).then((arr) => {
     const len = arr.length;
     const result = new Array(len);
 
@@ -58,7 +42,7 @@ Promise.throttle = (input, size, callback) => {
       next += 1;
 
       try {
-        return Promise.resolve(callback(arr[index], index)).then((ret) => {
+        return Promise.resolve(iterator(arr[index], index)).then((ret) => {
           result[index] = ret;
           return run(next);
         }, (err) => {
@@ -70,12 +54,25 @@ Promise.throttle = (input, size, callback) => {
       }
     }
 
-    return Promise.all(new Array(size).fill().map((val, index) => run(index))).then(() => result, (err) => {
-      error = null;
-      next = null;
-      return Promise.reject(err);
-    });
+    return Promise.all(new Array(concurrency).fill().map((val, index) => run(index)))
+      .then(() => result, (err) => {
+        error = null;
+        next = null;
+        return Promise.reject(err);
+      });
   });
-};
 
-Promise.each = (input, callback) => Promise.throttle(input, 1, callback);
+// run the promises one by one and return the result in a array with original order
+Promise.each = (input, iterator) =>
+  Promise.map(input, iterator, { concurrency: 1 });
+
+// run the promises one by one and reduce the array result to a value
+Promise.reduce = (input, iterator, initialValue) =>
+  Promise.resolve(input).then(arr =>
+    arr.reduce(
+      (prev, value, index) =>
+        prev.then(prevRet => iterator(prevRet, value, index)),
+      Promise.resolve(initialValue),
+    ),
+  );
+

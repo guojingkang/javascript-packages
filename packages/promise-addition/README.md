@@ -7,8 +7,8 @@ Extend native Promise in es6 with additional methods
 import 'promise-addition'; 
 
 // promisify the function
-const fs = Promise.promisify(require('fs'));
-fs.readFile(__filename, 'utf8')
+const readFile = Promise.promisify(require('fs').readFile);
+readFile(__filename, 'utf8')
   .then(content => console.log(content));
 
 // run function with callback injected
@@ -20,12 +20,16 @@ Promise.fromCallback(function (callback) {
 Promise.sleep(10)
   .then(() => console.log('10ms past'));
 
-// run each item one by one
+// run each item promise one by one
 Promise.each([1, 2, 3], (val, index) => val + 1)
   .then(result => console.log(result));// [2, 3, 4]
 
-// run 3 promises concurrently all the time
-Promise.throttle([1, 2, 3, 4], 3, (val, index) => val + 1)
+// run all promises concurrently
+Promise.map([1, 2, 3, 4], (val, index) => val + 1)
+  .then(result => console.log(result));// [2, 3, 4, 5]
+
+// run 2 promises concurrently
+Promise.map([1, 2, 3, 4], (val, index) => val + 1, {concurrency: 2})
   .then(result => console.log(result));// [2, 3, 4, 5]
 
 // if query not completed in 10 seconds, reject as timeout
@@ -46,18 +50,23 @@ db.query()
 #### Promise.sleep(ms: int)
 Promise version of `setTimeout()`
 
-#### Promise.promisify(input: function|object)
+#### Promise.promisify(input: function, options?: {context?: object, multiArgs?: boolean})
 Promisify node callback-style function or the object who has these functions. 
 
 #### Promise.fromCallback(func: (cb)=>any)
 `func` is async function that called `cb` at the end, either `cb(null, result)` or `cb(err)`
 
-#### Promise.each(input: arr|promise, callback: (item, index)=>promise)
-`input` can be an array or a promise that returns array. Run each item in the array with the callback one by one, as opposed to `Promise.all()`. If someone in the callback rejects/throws, promise will be rejected immediately and the remains will not be run.
-This function is same as `Promise.throttle(input, 1, callback)`
+#### Promise.each(input: array|promise, iterator: (item, index)=>any)
+Run each item in the array with the iterator one by one, as opposed to `Promise.all()`. And return the result array with the same order of input. `input` can be an array or a promise that returns array. 
+If someone in the iterator rejects/throws, promise will be rejected immediately and the remains will not be run.
+This function is equal to `Promise.map(input, iterator, {concurrency: 1})`
 
-#### Promise.throttle(input: arr|promise, concurrentNum: int, callback: (item, index)=>promise)
-Run the specified number items with the callback concurrently. If one resolved, then run next one. Reject immediately if some one failed.
+#### Promise.map(input: array|promise, iterator: (item, index)=>any, options?: {concurrency?:Infinity})
+Run the specified number(`concurrency`) items promises with the iterator concurrently. If one resolved, then run next one. Reject immediately if some one failed and remains will not be run.
+If concurrency is Infinity or less than 1, then it equals to `Promise.all(input.map(iterator))`
+
+#### Promise.reduce(input: array|promise, iterator: (prev, item, index)=>any, initialValue?: any)
+Same like `array.reduce()`. Run each item in the array with the iterator one by one. Reject immediately if some one failed.
 
 #### promise.timeout(ms: int, message?: string)
 If the promise is fulfilled less than the specified time(ms), no timeout occurs. Otherwise it will be rejected with the timeout message(default `timeout`);
