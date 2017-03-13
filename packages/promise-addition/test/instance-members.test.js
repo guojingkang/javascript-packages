@@ -11,12 +11,27 @@ describe('promise-addition: instance members', function () {
       });
       assert(Date.now() - result < 15);
 
-
       const result2 = await new Promise((resolve) => {
         const now = Date.now();
         return Promise.delay(5).then(() => resolve(now));
       }).delay(15);
-      assert(Date.now() - result2 >= 15);
+      const gap = Date.now() - result2;
+      assert(gap >= 15);
+      assert(gap < 25);
+    });
+    it('should work with chain', async function () {
+      const now1 = Date.now();
+      await Promise.delay(10).delay(15);
+      const now2 = Date.now();
+      const gap1 = now2 - now1;
+      assert(gap1 >= 15 && gap1 < 20);
+    });
+    it('should work with Promise.resolve()', async function () {
+      const now1 = Date.now();
+      await Promise.resolve(Promise.delay(10)).delay(15);
+      const now2 = Date.now();
+      const gap1 = now2 - now1;
+      assert(gap1 >= 15 && gap1 < 20);
     });
     it('should reject immediately', async function () {
       let time = 0;
