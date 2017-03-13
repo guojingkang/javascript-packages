@@ -3,6 +3,7 @@ module.exports = {
   rules: {
     'consistent-return': 'off', // off to allow `return;` and `return something;`
     'default-case': 'off', // off to allow no default branch in switch
+    'import/no-named-as-default-member': 'off', // off to allow named export also be default member
     'func-names': 'error', // error to ensure explicit function name required
     'global-require': 'off', // off to allow dynamic require
     'handle-callback-err': ['error', '^(err|error)$'],
