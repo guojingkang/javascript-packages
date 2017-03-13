@@ -20,15 +20,16 @@ module.exports = (Promise) => { // eslint-disable-line no-shadow
 
   // Promise.promisify(fs.readFile);
   // Promise.promisify([fs.readFile, fs.writeFile])
-  Promise.denodeify = Promise.promisify = (input, options) => {
+  Promise.promisify = (input, options) => {
     if (Array.isArray(input)) {
       return input.map(func => promisify(input, options));
     } else {
       return promisify(input, options);
     }
   };
+  Promise.denodeify = Promise.promisify;
 
-  Promise.denodeifyAll = Promise.promisifyAll =
+  Promise.promisifyAll =
     (obj, { suffix = 'Async', multiArgs = false, filter = defaultFilter } = {}) => {
       if (obj.__PromiseAdditionPromisified__) return obj;
       obj.__PromiseAdditionPromisified__ = true;
@@ -41,9 +42,10 @@ module.exports = (Promise) => { // eslint-disable-line no-shadow
       }
       return obj;
     };
+  Promise.denodeifyAll = Promise.promisifyAll;
 
   // Promise.fromCallback((cb)=>cb(null, result));
-  Promise.fromNode = Promise.fromCallback = function fromCallback(func) {
+  Promise.fromCallback = function fromCallback(func) {
     return new Promise((resolve, reject) => {
       func((err, result) => {
         if (err) return reject(err);
@@ -51,6 +53,7 @@ module.exports = (Promise) => { // eslint-disable-line no-shadow
       });
     });
   };
+  Promise.fromNode = Promise.fromCallback;
 
   // run the promises concurrently and return the result in a array with original order
   Promise.map = (input, iterator, { concurrency = Infinity } = {}) =>

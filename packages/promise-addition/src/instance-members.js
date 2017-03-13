@@ -51,7 +51,9 @@ module.exports = (Promise) => { // eslint-disable-line no-shadow
     });
   };
 
-  prototype.nodeify = prototype.toCallback = prototype.asCallback = function asCallback(callback) {
+  prototype.asCallback = function asCallback(callback) {
     return this.then(ret => callback(null, ret), err => callback(err));
   };
+  prototype.nodeify = prototype.asCallback;
+  prototype.toCallback = prototype.asCallback;
 };
