@@ -21,10 +21,10 @@ describe('promise-addition: instance members', function () {
     });
     it('should work with chain', async function () {
       const now1 = Date.now();
-      await Promise.delay(10).delay(15);
+      await Promise.delay(10).delay(15).delay(25);
       const now2 = Date.now();
       const gap1 = now2 - now1;
-      assert(gap1 >= 15 && gap1 < 20);
+      assert(gap1 >= 25 && gap1 < 30);
     });
     it('should work with Promise.resolve()', async function () {
       const now1 = Date.now();

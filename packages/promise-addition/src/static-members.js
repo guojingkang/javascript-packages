@@ -45,11 +45,13 @@ module.exports = (Promise) => { // eslint-disable-line no-shadow
   Promise.denodeifyAll = Promise.promisifyAll;
 
   // Promise.fromCallback((cb)=>cb(null, result));
-  Promise.fromCallback = function fromCallback(func) {
+  Promise.fromCallback = function fromCallback(func, { multiArgs = false } = {}) {
     return new Promise((resolve, reject) => {
-      func((err, result) => {
+      func((err, ...rets) => {
         if (err) return reject(err);
-        else return resolve(result);
+
+        if (multiArgs) return resolve(rets);
+        return resolve(rets[0]);
       });
     });
   };

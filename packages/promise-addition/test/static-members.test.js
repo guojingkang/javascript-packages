@@ -84,6 +84,16 @@ describe('promise-addition: static members', function () {
     it('should work with async callback', async function () {
       const result = await Promise.fromCallback(cb => setTimeout(() => cb(null, 1), 10));
       assert.equal(result, 1);
+
+      const result1 = await Promise.fromCallback(cb => setTimeout(() => cb(null, 1, 2), 10));
+      assert.equal(result1, 1);
+    });
+    it('should work with multiArgs = true', async function () {
+      const result = await Promise.fromCallback(cb => setTimeout(() => cb(null, 1, 2), 10), { multiArgs: true });
+      assert.deepStrictEqual(result, [1, 2]);
+
+      const result1 = await Promise.fromCallback(cb => setTimeout(() => cb(null, 1), 10), { multiArgs: true });
+      assert.deepStrictEqual(result1, [1]);
     });
   });
 });
