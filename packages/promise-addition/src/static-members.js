@@ -106,6 +106,44 @@ module.exports = (Promise) => { // eslint-disable-line no-shadow
         Promise.resolve(initialValue),
       ),
     );
+
+  Promise.wait = (checker, { timeout, timeoutMessage, interval = 15 } = {}) =>
+    new Promise((resolve, reject) => {
+      let toTimeout, // timeout handler for timeout param
+        toPoll; // timeout handler for poll
+
+      if (timeout > 0) {
+        toTimeout = setTimeout(() => {
+          const err = new Error(timeoutMessage || 'timeout');
+          err.timeout = true;
+          end(err);
+        }, timeout);
+      }
+
+      check();
+
+      let isEnd = false;
+      function end(err) {
+        isEnd = true;
+        if (toTimeout) clearTimeout(toTimeout);
+        if (toPoll) clearTimeout(toPoll);
+        if (err) return reject(err);
+        resolve();
+      }
+
+      function check() {
+        try {
+          Promise.resolve(checker()).then((finished) => {
+            if (isEnd) return;
+            if (finished) return end();
+            toPoll = setTimeout(check, interval);
+            return null;
+          }).catch(end);
+        } catch (e) {
+          end(e);
+        }
+      }
+    });
 };
 
 function defaultFilter(value, key, obj) {

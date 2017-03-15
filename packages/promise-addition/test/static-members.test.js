@@ -96,5 +96,54 @@ describe('promise-addition: static members', function () {
       assert.deepStrictEqual(result1, [1]);
     });
   });
+
+  describe('.wait()', function () {
+    it('should work', async function () {
+      let count = 0;
+      setInterval(() => (count += 1), 10);
+
+      const now = Date.now();
+
+      let checkerRun = 0;
+      await Promise.wait(() => {
+        checkerRun += 1;
+        return count >= 2;
+      }, { interval: 10 });
+
+      const gap = Date.now() - now;
+      assert.equal(count, 2);
+      assert(gap >= 20 && gap < 30);
+
+      assert.equal(checkerRun, 3);
+      await Promise.delay(15);
+      assert.equal(checkerRun, 3);
+    });
+    it('should work with timeout', async function () {
+      let count = 0;
+      setInterval(() => (count += 1), 10);
+
+      const now = Date.now();
+
+      let checkerRun = 0;
+      try {
+        await Promise.wait(() => {
+          checkerRun += 1;
+          return count >= 2;
+        }, { timeout: 11 });
+        assert('cant reach here');
+      } catch (e) {
+        assert.equal(e.message, 'timeout');
+        assert.equal(e.timeout, true);
+      }
+
+      const gap = Date.now() - now;
+      assert.equal(count, 1);
+      assert(gap >= 11 && gap < 20);
+
+      assert.equal(checkerRun, 1);
+      await Promise.delay(15);
+      assert.equal(checkerRun, 1);
+    });
+  });
 });
 
