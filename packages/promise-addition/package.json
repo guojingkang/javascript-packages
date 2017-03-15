@@ -1,6 +1,6 @@
 {
   "name": "promise-addition",
-  "description": "Extend native Promise in es6 with additional methods",
+  "description": "Extend native Promise in es6 with additional helper methods",
   "version": "0.1.6",
   "scripts": {},
   "main": "dist/index.js",

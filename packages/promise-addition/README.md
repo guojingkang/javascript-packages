@@ -1,4 +1,4 @@
-Extend native Promise in es6 with additional methods
+Extend native Promise in es6 with additional helper methods
 =================================
 
 ### Example
