@@ -7,38 +7,38 @@ describe('promise-addition: instance members', function () {
     it('should work', async function () {
       const result = await new Promise((resolve) => {
         const now = Date.now();
-        return Promise.delay(5).then(() => resolve(now));
+        return Promise.delay(10).then(() => resolve(now));
       });
-      assert(Date.now() - result < 15);
+      assert(Date.now() - result < 20);
 
       const result2 = await new Promise((resolve) => {
         const now = Date.now();
-        return Promise.delay(5).then(() => resolve(now));
-      }).delay(15);
+        return Promise.delay(10).then(() => resolve(now));
+      }).delay(20);
       const gap = Date.now() - result2;
-      assert(gap >= 15);
-      assert(gap < 25);
+      assert(gap >= 20);
+      assert(gap < 30);
     });
     it('should work with chain', async function () {
       const now1 = Date.now();
       await Promise.delay(10).delay(15).delay(25);
       const now2 = Date.now();
       const gap1 = now2 - now1;
-      assert(gap1 >= 25 && gap1 < 30);
+      assert(gap1 >= 25 && gap1 < 35);
     });
     it('should work with Promise.resolve()', async function () {
       const now1 = Date.now();
       await Promise.resolve(Promise.delay(10)).delay(15);
       const now2 = Date.now();
       const gap1 = now2 - now1;
-      assert(gap1 >= 15 && gap1 < 20);
+      assert(gap1 >= 15 && gap1 < 25);
     });
     it('should reject immediately', async function () {
       let time = 0;
       try {
         await new Promise((resolve, reject) => {
           time = Date.now();
-          return Promise.delay(5).then(() => reject('rejected'));
+          return Promise.delay(10).then(() => reject('rejected'));
         }).delay(15);
         throw new Error('cant reached here');
       } catch (e) {
