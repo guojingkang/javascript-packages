@@ -1,4 +1,4 @@
-Extend native Promise in es6 with additional methods
+Extend native Promise in es6 with additional helper methods
 =================================
 
 ### Example
@@ -93,6 +93,9 @@ If concurrency is Infinity or less than 1, then it equals to `Promise.all(input.
 
 #### .reduce(input: array|promise, iterator: (prev, item, index)=>any, initialValue?: any)
 Same like `array.reduce()`. Run each item in the array with the iterator one by one. Reject immediately if some one failed.
+
+#### .wait(checker: function, options?: {timeout: number, timeoutMessage: string, interval: number})
+Poll and fulfilled when `checker` returns ture or rejected when `checker` rejects or timeout occurs.
 
 ### Instance Methods
 
